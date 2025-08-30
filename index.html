@@ -1,131 +1,255 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>For My Babyy Joan 💖</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>For My loveyyy Joan Faraon 💖</title>
   <style>
-    body {
-      background-color: #ffe6f0;
-      font-family: 'Comic Sans MS', cursive, sans-serif;
-      margin: 0;
-      padding: 0;
-      color: #d63384;
+    :root{
+      --bg:#fff0f6;
+      --pink:#ff77b0;
+      --accent:#ff4d94;
+      --card:#fff;
+      --soft:#ffe6f0;
+      --shadow: 0 6px 18px rgba(255,77,148,0.12);
+      font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     }
-
-    header {
-      background-color: #ff99cc;
-      padding: 20px;
-      text-align: center;
-      color: white;
-      font-size: 2em;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      background: linear-gradient(180deg,var(--bg), #fff);
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:30px;
+      color:#333;
     }
-
-    .gallery {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 15px;
-      padding: 20px;
+    .container{
+      width:100%;
+      max-width:980px;
+      background:var(--card);
+      border-radius:18px;
+      padding:28px;
+      box-shadow:var(--shadow);
+      border: 6px solid rgba(255, 183, 213, 0.3);
+      position:relative;
+      overflow:hidden;
     }
+    /* cute corner hearts */
+    .corner-hearts{position:absolute;right:-30px;top:-30px;transform:rotate(15deg);opacity:.9}
+    .heart{width:80px;height:80px;background:var(--pink);border-radius:50% 50% 50% 50%/60% 60% 40% 40%;position:relative;margin:8px;display:inline-block}
+    .heart:before,.heart:after{content:'';position:absolute;width:80px;height:80px;background:var(--pink);border-radius:50%;top:-40px}
+    .heart:after{left:40px}
 
-    .gallery img {
-      width: 200px;
-      height: 200px;
-      object-fit: cover;
-      border: 4px solid #ffb3d9;
-      border-radius: 15px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    }
+    header{display:flex;align-items:center;gap:18px}
+    .logo{width:72px;height:72px;border-radius:14px;background:linear-gradient(135deg,var(--pink),var(--accent));display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:22px;box-shadow:0 8px 20px rgba(255,77,148,0.18)}
+    h1{margin:0;font-size:28px}
+    p.lead{margin:4px 0 0;color:#7b404f}
 
-    .message-container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 40px;
-    }
+    .grid{display:grid;grid-template-columns:1fr 380px;gap:22px;margin-top:20px}
 
-    .envelope {
-      width: 300px;
-      height: 200px;
-      background: #ffc0cb;
-      position: relative;
-      border: 2px solid #ff69b4;
-      border-radius: 10px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-      padding: 20px;
-    }
+    /* left column: gallery & message */
+    .card{background:var(--soft);padding:14px;border-radius:12px}
+    .section-title{font-weight:700;margin:0 0 10px}
 
-    .message {
-      font-size: 1.1em;
-      color: #880e4f;
-    }
+    /* gallery */
+    .gallery{display:flex;gap:10px;flex-wrap:wrap}
+    .thumb{width:120px;height:90px;border-radius:10px;background:#fff;display:flex;align-items:center;justify-content:center;overflow:hidden;border:2px dashed rgba(255,77,148,0.12)}
+    .thumb img{width:100%;height:100%;object-fit:cover}
+    .uploader{display:flex;gap:8px;align-items:center}
+    .btn{background:var(--accent);color:white;padding:8px 12px;border-radius:10px;border:none;cursor:pointer}
+    .btn.ghost{background:transparent;color:var(--accent);border:2px solid rgba(255,77,148,0.12)}
 
-    .heart {
-      position: absolute;
-      width: 20px;
-      height: 20px;
-      background: #ff3366;
-      transform: rotate(-45deg);
-      top: -10px;
-      right: -10px;
-    }
+    /* envelope message */
+    .envelope{width:100%;max-width:540px;margin-top:10px;position:relative}
+    .env-top{height:0;border-left:60px solid transparent;border-right:60px solid transparent;border-bottom:40px solid var(--accent);border-radius:6px 6px 0 0}
+    .env-body{background:white;padding:14px;border-radius:0 0 10px 10px;border:2px solid rgba(255,77,148,0.08)}
+    .message-display{min-height:80px;white-space:pre-wrap}
 
-    .heart::before,
-    .heart::after {
-      content: "";
-      position: absolute;
-      width: 20px;
-      height: 20px;
-      background: #ff3366;
-      border-radius: 50%;
-    }
+    /* right column: music + controls */
+    .side{position:sticky;top:30px}
+    .audio-preview{padding:12px;border-radius:12px;background:linear-gradient(180deg,#fff,#fff);box-shadow:0 6px 16px rgba(0,0,0,0.03);}
+    .muted{opacity:.7;font-size:13px}
 
-    .heart::before {
-      top: -10px;
-      left: 0;
-    }
+    footer{margin-top:18px;text-align:center;color:#a54a6a;font-size:13px}
 
-    .heart::after {
-      left: 10px;
-      top: 0;
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      font-size: 0.9em;
-      color: #c2185b;
+    /* small screens */
+    @media (max-width:880px){
+      .grid{grid-template-columns:1fr;}
+      .side{position:relative}
     }
   </style>
 </head>
 <body>
-
-  <header>
-    💕 For My Beautiful Joan  💕
-  </header>
-
-  <section class="gallery">
-    <img src="Iloveyou.jpg" alt="Us 1">
-    <img src="With you.jpg" alt="Us 2">
-    <img src="Happy.jpg" alt="Us 3">
-    <!-- Add more <img> tags here -->
-  </section>
-
-  <section class="message-container">
-    <div class="envelope">
-      <div class="heart"></div>
-      <div class="message">
-        Hi babyy! 💌<br>
-        Hi babyy I hope u enjoy this simple program i made just for u i really really appreciate u as a person who
-        i really love and enjoy the precense of u know that i am always grateful for you my Love, Iloveyou baby Joan, <br>💘 Jaycee xoxo 
-      </div>
+  <div class="container" id="page">
+    <div class="corner-hearts">
+      <div class="heart" style="transform:scale(.9)"></div>
+      <div class="heart" style="transform:scale(.6) translate(-20px,40px)"></div>
     </div>
-  </section>
 
-  <footer>
-    Made with love 💗 by Jaycee
-  </footer>
+    <header>
+      <div class="logo"><Iloveyou class="jpeg"></Iloveyou></div>
+      <div>
+        <h1>HI Joan Faraon</h1>
+        <p class="lead">A pink place for mi loveyyy✨</p>
+      </div>
+    </header>
 
+    <div class="grid">
+      <main>
+        <section class="card">
+          <h3 class="section-title">Photos</h3>
+          <div class="uploader">
+            <input id="photoInput" type="file" accept="image/*" multiple />
+            <button class="btn" id="clearPhotos">Clear</button>
+          </div>
+          <div class="gallery" id="gallery" style="margin-top:10px">
+            <!-- Thumbnails appear here -->
+          </div>
+        </section>
+
+        <section class="card" style="margin-top:14px">
+          <h3 class="section-title">Envelope Message</h3>
+          <div class="envelope">
+            <div class="env-top"></div>
+            <div class="env-body">
+              <textarea id="messageInput" placeholder="Write a sweet message..." style="width:100%;height:120px;border:1px dashed rgba(255,77,148,0.12);padding:10px;border-radius:8px;font-size:15px"></textarea>
+              <div style="display:flex;gap:8px;margin-top:8px;align-items:center">
+                <button class="btn" id="showMsg">Seal & Show</button>
+                <button class="btn ghost" id="clearMsg">Clear</button>
+                <label class="muted">Tip: paste emojis 💌</label>
+              </div>
+              <div style="margin-top:12px">
+                <div class="section-title">Preview</div>
+                <div class="message-display" id="messageDisplay">Your message will appear here when you click "Seal & Show".</div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <aside class="side">
+        <div class="card audio-preview">
+          <h3 class="section-title">Music</h3>
+          <p class="muted">Upload an audio file (mp3, wav) and it will play in the player below.</p>
+          <input id="audioInput" type="file" accept="audio/*" />
+          <div style="margin-top:10px">
+            <audio id="player" controls preload="none" style="width:100%;background:transparent;border-radius:10px">
+              <!-- You can place a default source here if you want: -->
+              <!-- <source src="your-music.mp3"> -->
+              Your browser does not support the audio element.
+            </audio>
+          </div>
+          <div style="display:flex;gap:8px;margin-top:10px;align-items:center">
+            <button class="btn" id="playBtn">Play</button>
+            <button class="btn ghost" id="pauseBtn">Pause</button>
+            <button class="btn ghost" id="stopBtn">Stop</button>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:12px;text-align:center">
+          <p style="margin:6px 0">Want to personalize more?</p>
+          <button class="btn" id="downloadBtn">Download .html</button>
+          <div style="font-size:12px;color:#a54a6a;margin-top:8px">Save your page to share with friends.</div>
+        </div>
+      </aside>
+    </div>
+
+    <footer>
+      Made with ♥ — Real and Genuine Love for Joan Faraon
+    </footer>
+  </div>
+
+  <script>
+    // Photo upload and preview
+    const photoInput = document.getElementById('photoInput');
+    const gallery = document.getElementById('gallery');
+    const clearPhotos = document.getElementById('clearPhotos');
+
+    function addThumbnail(file){
+      const url = URL.createObjectURL(file);
+      const div = document.createElement('div');
+      div.className = 'thumb';
+      const img = document.createElement('img');
+      img.src = url;
+      img.alt = file.name;
+      div.appendChild(img);
+      gallery.appendChild(div);
+    }
+
+    photoInput.addEventListener('change', (e)=>{
+      const files = Array.from(e.target.files).slice(0,12); // limit previews
+      gallery.innerHTML='';
+      files.forEach(f=>addThumbnail(f));
+    });
+
+    clearPhotos.addEventListener('click', ()=>{
+      gallery.innerHTML='';
+      photoInput.value = '';
+    });
+
+    // Message envelope
+    const messageInput = document.getElementById('messageInput');
+    const messageDisplay = document.getElementById('messageDisplay');
+    const showMsg = document.getElementById('showMsg');
+    const clearMsg = document.getElementById('clearMsg');
+
+    showMsg.addEventListener('click', ()=>{
+      const text = messageInput.value.trim();
+      messageDisplay.textContent = text || 'No message yet — write something sweet!';
+      // little visual cue
+      messageDisplay.style.background = 'linear-gradient(180deg, #fff, #fff0f6)';
+      messageDisplay.style.padding = '10px';
+      messageDisplay.style.borderRadius = '8px';
+    });
+
+    clearMsg.addEventListener('click', ()=>{
+      messageInput.value='';
+      messageDisplay.textContent = 'Your message will appear here when you click "Seal & Show".';
+    });
+
+    // Audio controls
+    const audioInput = document.getElementById('audioInput');
+    const player = document.getElementById('player');
+    const playBtn = document.getElementById('playBtn');
+    const pauseBtn = document.getElementById('pauseBtn');
+    const stopBtn = document.getElementById('stopBtn');
+
+    audioInput.addEventListener('change', (e)=>{
+      const file = e.target.files[0];
+      if(!file) return;
+      const url = URL.createObjectURL(file);
+      player.src = url;
+      player.load();
+      player.play().catch(()=>{});
+    });
+
+    playBtn.addEventListener('click', ()=>player.play().catch(()=>{}));
+    pauseBtn.addEventListener('click', ()=>player.pause());
+    stopBtn.addEventListener('click', ()=>{ player.pause(); player.currentTime = 0; });
+
+    // Download the current HTML (simple client-side export)
+    const downloadBtn = document.getElementById('downloadBtn');
+    downloadBtn.addEventListener('click', ()=>{
+      // grab current HTML and create a blob to download
+      const doc = '<!doctype html>\n' + document.documentElement.outerHTML;
+      const blob = new Blob([doc], {type: 'text/html'});
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = 'cute-pink-page.html';
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+    });
+
+    // Small accessibility: keyboard shortcut to focus message
+    document.addEventListener('keydown', (e)=>{
+      if(e.key === 'm' && (e.ctrlKey || e.metaKey)){
+        e.preventDefault();
+        messageInput.focus();
+      }
+    });
+  </script>
 </body>
 </html>
