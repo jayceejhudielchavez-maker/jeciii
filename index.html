@@ -1,87 +1,615 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>For My loveyyy Joan Faraon 💖</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>A Pink Page for My Loveyyy 💖</title>
   <style>
-    :root{
-      --bg:#fff0f6;
-      --pink:#ff77b0;
-      --accent:#ff4d94;
-      --card:#fff;
-      --soft:#ffe6f0;
-      --shadow: 0 6px 18px rgba(255,77,148,0.12);
+    :root {
+      --bg: #fff0f6;
+      --pink: #ff77b0;
+      --accent: #ff4d94;
+      --card: #fff;
+      --soft: #ffe6f0;
+      --shadow: 0 6px 18px rgba(255, 77, 148, 0.12);
       font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     }
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      background: linear-gradient(180deg,var(--bg), #fff);
-      min-height:100vh;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      padding:30px;
-      color:#333;
+
+    * { box-sizing: border-box; }
+    
+    body {
+      margin: 0;
+      background: linear-gradient(180deg, var(--bg), #fff);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 30px;
+      color: #333;
     }
-    .container{
-      width:100%;
-      max-width:980px;
-      background:var(--card);
-      border-radius:18px;
-      padding:28px;
-      box-shadow:var(--shadow);
+
+    .container {
+      width: 100%;
+      max-width: 980px;
+      background: var(--card);
+      border-radius: 18px;
+      padding: 28px;
+      box-shadow: var(--shadow);
       border: 6px solid rgba(255, 183, 213, 0.3);
-      position:relative;
-      overflow:hidden;
+      position: relative;
+      overflow: hidden;
     }
-    /* cute corner hearts */
-    .corner-hearts{position:absolute;right:-30px;top:-30px;transform:rotate(15deg);opacity:.9}
-    .heart{width:80px;height:80px;background:var(--pink);border-radius:50% 50% 50% 50%/60% 60% 40% 40%;position:relative;margin:8px;display:inline-block}
-    .heart:before,.heart:after{content:'';position:absolute;width:80px;height:80px;background:var(--pink);border-radius:50%;top:-40px}
-    .heart:after{left:40px}
 
-    header{display:flex;align-items:center;gap:18px}
-    .logo{width:72px;height:72px;border-radius:14px;background:linear-gradient(135deg,var(--pink),var(--accent));display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:22px;box-shadow:0 8px 20px rgba(255,77,148,0.18)}
-    h1{margin:0;font-size:28px}
-    p.lead{margin:4px 0 0;color:#7b404f}
+    .corner-hearts {
+      position: absolute;
+      right: -30px;
+      top: -30px;
+      transform: rotate(15deg);
+      opacity: .9;
+    }
 
-    .grid{display:grid;grid-template-columns:1fr 380px;gap:22px;margin-top:20px}
+    .heart {
+      width: 80px;
+      height: 80px;
+      background: var(--pink);
+      border-radius: 50% 50% 50% 50%/60% 60% 40% 40%;
+      position: relative;
+      margin: 8px;
+      display: inline-block;
+    }
 
-    /* left column: gallery & message */
-    .card{background:var(--soft);padding:14px;border-radius:12px}
-    .section-title{font-weight:700;margin:0 0 10px}
+    .heart:before,
+    .heart:after {
+      content: '';
+      position: absolute;
+      width: 80px;
+      height: 80px;
+      background: var(--pink);
+      border-radius: 50%;
+      top: -40px;
+    }
 
-    /* gallery */
-    .gallery{display:flex;gap:10px;flex-wrap:wrap}
-    .thumb{width:120px;height:90px;border-radius:10px;background:#fff;display:flex;align-items:center;justify-content:center;overflow:hidden;border:2px dashed rgba(255,77,148,0.12)}
-    .thumb img{width:100%;height:100%;object-fit:cover}
-    .uploader{display:flex;gap:8px;align-items:center}
-    .btn{background:var(--accent);color:white;padding:8px 12px;border-radius:10px;border:none;cursor:pointer}
-    .btn.ghost{background:transparent;color:var(--accent);border:2px solid rgba(255,77,148,0.12)}
+    .heart:after {
+      left: 40px;
+    }
 
-    /* envelope message */
-    .envelope{width:100%;max-width:540px;margin-top:10px;position:relative}
-    .env-top{height:0;border-left:60px solid transparent;border-right:60px solid transparent;border-bottom:40px solid var(--accent);border-radius:6px 6px 0 0}
-    .env-body{background:white;padding:14px;border-radius:0 0 10px 10px;border:2px solid rgba(255,77,148,0.08)}
-    .message-display{min-height:80px;white-space:pre-wrap}
+    header {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
 
-    /* right column: music + controls */
-    .side{position:sticky;top:30px}
-    .audio-preview{padding:12px;border-radius:12px;background:linear-gradient(180deg,#fff,#fff);box-shadow:0 6px 16px rgba(0,0,0,0.03);}
-    .muted{opacity:.7;font-size:13px}
+    .logo {
+      width: 72px;
+      height: 72px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, var(--pink), var(--accent));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 700;
+      font-size: 22px;
+      box-shadow: 0 8px 20px rgba(255, 77, 148, 0.18);
+    }
 
-    footer{margin-top:18px;text-align:center;color:#a54a6a;font-size:13px}
+    h1 { margin: 0; font-size: 28px; }
+    p.lead { margin: 4px 0 0; color: #7b404f; }
 
-    /* small screens */
-    @media (max-width:880px){
-      .grid{grid-template-columns:1fr;}
-      .side{position:relative}
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 380px;
+      gap: 22px;
+      margin-top: 20px;
+    }
+
+    .card {
+      background: var(--soft);
+      padding: 14px;
+      border-radius: 12px;
+      position: relative;
+    }
+
+    .section-title { font-weight: 700; margin: 0 0 10px; }
+
+    .gallery,
+    .videos { display: flex; gap: 10px; flex-wrap: wrap; }
+
+    .thumb {
+      width: 120px;
+      height: 90px;
+      border-radius: 10px;
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      border: 2px dashed rgba(255, 77, 148, 0.12);
+      position: relative;
+    }
+
+    .thumb img,
+    .thumb video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .uploader { display: flex; gap: 8px; align-items: center; }
+
+    .btn {
+      background: var(--accent);
+      color: white;
+      padding: 8px 12px;
+      border-radius: 10px;
+      border: none;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 12px rgba(255, 77, 148, 0.2);
+    }
+    
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(255, 77, 148, 0.3); }
+
+    .btn.ghost {
+      background: transparent;
+      color: var(--accent);
+      border: 2px solid rgba(255, 77, 148, 0.12);
+      box-shadow: none;
+    }
+    .btn.ghost:hover { transform: translateY(-2px); box-shadow: none; }
+
+    .file-input-wrapper {
+      position: relative;
+      overflow: hidden;
+      display: inline-block;
+    }
+    
+    .file-input-wrapper input[type=file] {
+      font-size: 100px;
+      position: absolute;
+      left: 0;
+      top: 0;
+      opacity: 0;
+      cursor: pointer;
+    }
+
+    .delete-btn {
+      position: absolute;
+      top: 2px;
+      right: 2px;
+      background: rgba(255, 0, 0, 0.7);
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 20px;
+      height: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      cursor: pointer;
+      z-index: 10;
+    }
+
+    .envelope {
+      width: 100%;
+      max-width: 540px;
+      margin-top: 10px;
+      position: relative;
+    }
+
+    .env-top {
+      height: 0;
+      border-left: 60px solid transparent;
+      border-right: 60px solid transparent;
+      border-bottom: 40px solid var(--accent);
+      border-radius: 6px 6px 0 0;
+    }
+
+    .env-body {
+      background: white;
+      padding: 14px;
+      border-radius: 0 0 10px 10px;
+      border: 2px solid rgba(255, 77, 148, 0.08);
+    }
+
+    .message-display {
+      min-height: 80px;
+      white-space: pre-wrap;
+    }
+
+    .side {
+      position: sticky;
+      top: 30px;
+    }
+
+    .audio-preview {
+      padding: 12px;
+      border-radius: 12px;
+      background: linear-gradient(180deg, #fff, #fff);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.03);
+    }
+
+    .muted { opacity: .7; font-size: 13px; }
+
+    footer {
+      margin-top: 18px;
+      text-align: center;
+      color: #a54a6a;
+      font-size: 13px;
+    }
+
+    #userIdDisplay {
+      text-align: center;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    #loadingSpinner {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border: 4px solid rgba(255, 255, 255, 0.3);
+      border-radius: 50%;
+      border-top: 4px solid var(--accent);
+      width: 30px;
+      height: 30px;
+      animation: spin 1s linear infinite;
+      z-index: 20;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .message-box {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: var(--card);
+      border: 2px solid var(--accent);
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: var(--shadow);
+      z-index: 1000;
+      text-align: center;
+      max-width: 300px;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .message-box.show {
+      opacity: 1;
+      visibility: visible;
+      transform: translate(-50%, -50%) scale(1);
+    }
+
+    .message-box button { margin-top: 10px; }
+
+    #confetti-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 50;
+    }
+
+    .confetti {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background-color: var(--accent);
+      opacity: 0;
+      transform: rotate(0deg);
+      animation: confetti-fall 2s linear forwards;
+    }
+
+    @keyframes confetti-fall {
+      0% {
+        transform: translate(0, 0) rotate(0deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translate(var(--x), var(--y)) rotate(var(--deg));
+        opacity: 0;
+      }
+    }
+
+    @media (max-width: 880px) {
+      .grid { grid-template-columns: 1fr; }
+      .side { position: relative; }
     }
   </style>
+  <script type="module">
+    // Firebase imports - DO NOT CHANGE THESE
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+    import { getAuth, signInAnonymously, signInWithCustomToken } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+    import { getFirestore, doc, onSnapshot, setDoc, getDoc } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+
+    // Global variables provided by the environment
+    const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
+    const firebaseConfig = JSON.parse(typeof __firebase_config !== 'undefined' ? __firebase_config : '{}');
+    const initialAuthToken = typeof __initial_auth_token !== 'undefined' ? __initial_auth_token : null;
+
+    // --- Firebase Initialization and Authentication ---
+    let db, auth, userId;
+    const pageId = window.location.hash.substring(1) || crypto.randomUUID();
+
+    async function initializeFirebase() {
+        if (!firebaseConfig || Object.keys(firebaseConfig).length === 0) {
+            console.error("Firebase config is missing. The app will not be able to save data.");
+            showCustomMessageBox("Firebase is not configured. Data will not be saved. Please check your environment settings.");
+            return;
+        }
+        const app = initializeApp(firebaseConfig);
+        db = getFirestore(app);
+        auth = getAuth(app);
+
+        try {
+            if (initialAuthToken) {
+                await signInWithCustomToken(auth, initialAuthToken);
+            } else {
+                await signInAnonymously(auth);
+            }
+        } catch (e) {
+            console.error("Authentication error:", e);
+            await signInAnonymously(auth);
+        }
+        userId = auth.currentUser?.uid || crypto.randomUUID();
+        document.getElementById('userIdDisplay').textContent = `Page ID: ${pageId}`;
+        console.log("Firebase initialized. User ID:", userId);
+
+        onSnapshot(doc(db, `artifacts/${appId}/public/data/love_page/${pageId}`), (docSnapshot) => {
+            const data = docSnapshot.data();
+            console.log("Firestore data received:", data);
+            if (data) {
+                renderContent(data);
+            } else {
+                renderContent({});
+            }
+        }, (error) => {
+            console.error("Error listening to Firestore:", error);
+            showCustomMessageBox(`Failed to load page content: ${error.message}`);
+        });
+    }
+
+    // --- DOM Elements ---
+    const pageContainer = document.getElementById('page');
+    const loadingSpinner = document.getElementById('loadingSpinner');
+    const photoInput = document.getElementById('photoInput');
+    const gallery = document.getElementById('gallery');
+    const videoInput = document.getElementById('videoInput');
+    const videosContainer = document.getElementById('videosContainer');
+    const messageInput = document.getElementById('messageInput');
+    const saveMsgBtn = document.getElementById('saveMsgBtn');
+    const openMsgBtn = document.getElementById('openMsgBtn');
+    const secretMessageModal = document.getElementById('secretMessageModal');
+    const secretMessageText = document.getElementById('secretMessageText');
+    const audioInput = document.getElementById('audioInput');
+    const player = document.getElementById('player');
+    const playBtn = document.getElementById('playBtn');
+    const pauseBtn = document.getElementById('pauseBtn');
+    const stopBtn = document.getElementById('stopBtn');
+    const confettiContainer = document.getElementById('confetti-container');
+
+    // --- Helper Functions ---
+    function showLoading(show) {
+      if (show) {
+        loadingSpinner.style.display = 'block';
+        pageContainer.style.opacity = '0.5';
+      } else {
+        loadingSpinner.style.display = 'none';
+        pageContainer.style.opacity = '1';
+      }
+    }
+
+    function showCustomMessageBox(message) {
+      const box = document.createElement('div');
+      box.className = 'message-box show';
+      box.innerHTML = `<p>${message}</p><button class="btn">OK</button>`;
+      document.body.appendChild(box);
+      box.querySelector('button').onclick = () => document.body.removeChild(box);
+    }
+
+    async function saveToFirestore(data) {
+      if (!db) return;
+      showLoading(true);
+      const docRef = doc(db, `artifacts/${appId}/public/data/love_page/${pageId}`);
+      try {
+        await setDoc(docRef, data, { merge: true });
+        console.log("Data successfully saved to Firestore!");
+      } catch (e) {
+        console.error("Error saving to Firestore:", e);
+        showCustomMessageBox(`Failed to save data: ${e.message}`);
+      } finally {
+        showLoading(false);
+      }
+    }
+
+    function fileToBase64(file) {
+      return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onload = () => resolve(reader.result);
+        reader.onerror = error => reject(error);
+        reader.readAsDataURL(file);
+      });
+    }
+
+    function createConfetti() {
+        const numConfetti = 50;
+        for (let i = 0; i < numConfetti; i++) {
+            const confetti = document.createElement('div');
+            confetti.className = 'confetti';
+            const x = Math.random() * 100 - 50; // Random horizontal travel
+            const y = Math.random() * 200 + 50;  // Random vertical travel
+            const deg = Math.random() * 360;    // Random rotation
+            const color = `hsl(${Math.random() * 360}, 70%, 70%)`;
+            confetti.style.backgroundColor = color;
+            confetti.style.left = `${Math.random() * 100}vw`;
+            confetti.style.setProperty('--x', `${x}px`);
+            confetti.style.setProperty('--y', `${y}px`);
+            confetti.style.setProperty('--deg', `${deg}deg`);
+            confettiContainer.appendChild(confetti);
+
+            setTimeout(() => {
+                confetti.remove();
+            }, 2000);
+        }
+    }
+
+    function renderContent(data) {
+        const photos = data.photos || [];
+        const message = data.message || '';
+        const audio = data.audio || null;
+        const video = data.video || null;
+        
+        gallery.innerHTML = '';
+        photos.forEach((photo, index) => {
+            if (photo.base64) {
+                const div = document.createElement('div');
+                div.className = 'thumb';
+                const img = document.createElement('img');
+                img.src = photo.base64;
+                img.alt = photo.name || 'Photo';
+                div.appendChild(img);
+                const deleteBtn = document.createElement('button');
+                deleteBtn.className = 'delete-btn';
+                deleteBtn.textContent = '×';
+                deleteBtn.onclick = () => deleteMedia('photos', index);
+                div.appendChild(deleteBtn);
+                gallery.appendChild(div);
+            }
+        });
+
+        videosContainer.innerHTML = '';
+        if (video && video.base64) {
+            const div = document.createElement('div');
+            div.className = 'thumb';
+            const vid = document.createElement('video');
+            vid.src = video.base64;
+            vid.controls = true;
+            div.appendChild(vid);
+            const deleteBtn = document.createElement('button');
+            deleteBtn.className = 'delete-btn';
+            deleteBtn.textContent = '×';
+            deleteBtn.onclick = () => deleteMedia('video');
+            div.appendChild(deleteBtn);
+            videosContainer.appendChild(div);
+        }
+
+        messageInput.value = message;
+        secretMessageText.textContent = message || 'Write a message in the text box and click "Save" to save it for your love!';
+        
+        if (audio && audio.base64) {
+            player.src = audio.base64;
+            player.load();
+        } else {
+            player.src = '';
+        }
+    }
+
+    // --- Event Handlers ---
+    photoInput.addEventListener('change', async (e) => {
+      const files = Array.from(e.target.files).slice(0, 12);
+      const photos = [];
+      const docRef = doc(db, `artifacts/${appId}/public/data/love_page/${pageId}`);
+      const docSnapshot = await getDoc(docRef);
+      const currentPhotos = docSnapshot.data()?.photos || [];
+
+      for (const file of files) {
+          try {
+              const base64 = await fileToBase64(file);
+              photos.push({ name: file.name, base64: base64 });
+          } catch (error) {
+              console.error("Error converting file to Base64:", error);
+          }
+      }
+      await saveToFirestore({ photos: [...currentPhotos, ...photos] });
+    });
+
+    videoInput.addEventListener('change', async (e) => {
+        const file = e.target.files[0];
+        if (file) {
+            try {
+                const base64 = await fileToBase64(file);
+                await saveToFirestore({ video: { name: file.name, base64: base64 } });
+            } catch (error) {
+                console.error("Error converting video to Base64:", error);
+                showCustomMessageBox("Failed to save video.");
+            }
+        }
+    });
+
+    saveMsgBtn.addEventListener('click', async () => {
+        const text = messageInput.value.trim();
+        await saveToFirestore({ message: text });
+        showCustomMessageBox("Message saved successfully!");
+    });
+
+    openMsgBtn.addEventListener('click', () => {
+        secretMessageModal.classList.add('show');
+        createConfetti();
+    });
+
+    document.getElementById('closeModalBtn').addEventListener('click', () => {
+        secretMessageModal.classList.remove('show');
+    });
+
+    audioInput.addEventListener('change', async (e) => {
+        const file = e.target.files[0];
+        if (file) {
+            try {
+                const base64 = await fileToBase64(file);
+                await saveToFirestore({ audio: { name: file.name, base64: base64 } });
+            } catch (error) {
+                console.error("Error converting audio to Base64:", error);
+                showCustomMessageBox("Failed to save audio.");
+            }
+        }
+    });
+
+    playBtn.addEventListener('click', () => player.play().catch(() => {}));
+    pauseBtn.addEventListener('click', () => player.pause());
+    stopBtn.addEventListener('click', () => { player.pause(); player.currentTime = 0; });
+
+    async function deleteMedia(type, index) {
+      showLoading(true);
+      const docRef = doc(db, `artifacts/${appId}/public/data/love_page/${pageId}`);
+      try {
+        if (type === 'photos') {
+          const docSnapshot = await getDoc(docRef);
+          const currentData = docSnapshot.data();
+          if (currentData && currentData.photos) {
+            const updatedPhotos = [...currentData.photos];
+            updatedPhotos.splice(index, 1);
+            await setDoc(docRef, { photos: updatedPhotos }, { merge: true });
+          }
+        } else if (type === 'video') {
+          await setDoc(docRef, { video: null }, { merge: true });
+        }
+        console.log(`${type} deleted.`);
+      } catch (e) {
+        console.error(`Error deleting ${type}:`, e);
+        showCustomMessageBox(`Failed to delete ${type}: ${e.message}`);
+      } finally {
+        showLoading(false);
+      }
+    }
+
+    window.onload = initializeFirebase;
+  </script>
 </head>
 <body>
+  <div id="loadingSpinner" style="display: none;"></div>
+  <div id="confetti-container"></div>
   <div class="container" id="page">
     <div class="corner-hearts">
       <div class="heart" style="transform:scale(.9)"></div>
@@ -89,24 +617,33 @@
     </div>
 
     <header>
-      <div class="logo"><Iloveyou class="jpeg"></Iloveyou></div>
+      <div class="logo">💖</div>
       <div>
-        <h1>HI Joan Faraon</h1>
-        <p class="lead">A pink place for mi loveyyy✨</p>
+        <h1>For My Loveyyy</h1>
+        <p class="lead">A pink place just for you ✨</p>
       </div>
     </header>
+    
+    <div id="userIdDisplay"></div>
 
     <div class="grid">
       <main>
         <section class="card">
           <h3 class="section-title">Photos</h3>
+          <p class="muted">Click to add photos to the gallery.</p>
           <div class="uploader">
-            <input id="photoInput" type="file" accept="image/*" multiple />
-            <button class="btn" id="clearPhotos">Clear</button>
+            <input id="photoInput" type="file" accept="image/*" multiple>
           </div>
-          <div class="gallery" id="gallery" style="margin-top:10px">
-            <!-- Thumbnails appear here -->
+          <div class="gallery" id="gallery" style="margin-top:10px"></div>
+        </section>
+        
+        <section class="card" style="margin-top:14px">
+          <h3 class="section-title">Videos</h3>
+          <p class="muted">Upload a short video (e.g., mp4). Only one video can be saved at a time.</p>
+          <div class="uploader">
+            <input id="videoInput" type="file" accept="video/*">
           </div>
+          <div class="videos" id="videosContainer" style="margin-top:10px"></div>
         </section>
 
         <section class="card" style="margin-top:14px">
@@ -114,15 +651,10 @@
           <div class="envelope">
             <div class="env-top"></div>
             <div class="env-body">
-              <textarea id="messageInput" placeholder="Write a sweet message..." style="width:100%;height:120px;border:1px dashed rgba(255,77,148,0.12);padding:10px;border-radius:8px;font-size:15px"></textarea>
+              <textarea id="messageInput" placeholder="Write a sweet secret message..." style="width:100%;height:120px;border:1px dashed rgba(255,77,148,0.12);padding:10px;border-radius:8px;font-size:15px"></textarea>
               <div style="display:flex;gap:8px;margin-top:8px;align-items:center">
-                <button class="btn" id="showMsg">Seal & Show</button>
-                <button class="btn ghost" id="clearMsg">Clear</button>
-                <label class="muted">Tip: paste emojis 💌</label>
-              </div>
-              <div style="margin-top:12px">
-                <div class="section-title">Preview</div>
-                <div class="message-display" id="messageDisplay">Your message will appear here when you click "Seal & Show".</div>
+                <button class="btn" id="saveMsgBtn">Save Secret Message</button>
+                <button class="btn ghost" id="openMsgBtn">Open Secret Message</button>
               </div>
             </div>
           </div>
@@ -133,11 +665,9 @@
         <div class="card audio-preview">
           <h3 class="section-title">Music</h3>
           <p class="muted">Upload an audio file (mp3, wav) and it will play in the player below.</p>
-          <input id="audioInput" type="file" accept="audio/*" />
+          <input id="audioInput" type="file" accept="audio/*">
           <div style="margin-top:10px">
             <audio id="player" controls preload="none" style="width:100%;background:transparent;border-radius:10px">
-              <!-- You can place a default source here if you want: -->
-              <!-- <source src="your-music.mp3"> -->
               Your browser does not support the audio element.
             </audio>
           </div>
@@ -147,109 +677,18 @@
             <button class="btn ghost" id="stopBtn">Stop</button>
           </div>
         </div>
-
-        <div class="card" style="margin-top:12px;text-align:center">
-          <p style="margin:6px 0">Want to personalize more?</p>
-          <button class="btn" id="downloadBtn">Download .html</button>
-          <div style="font-size:12px;color:#a54a6a;margin-top:8px">Save your page to share with friends.</div>
-        </div>
       </aside>
     </div>
 
     <footer>
-      Made with ♥ — Real and Genuine Love for Joan Faraon
+      Made with ♥
     </footer>
   </div>
 
-  <script>
-    // Photo upload and preview
-    const photoInput = document.getElementById('photoInput');
-    const gallery = document.getElementById('gallery');
-    const clearPhotos = document.getElementById('clearPhotos');
-
-    function addThumbnail(file){
-      const url = URL.createObjectURL(file);
-      const div = document.createElement('div');
-      div.className = 'thumb';
-      const img = document.createElement('img');
-      img.src = url;
-      img.alt = file.name;
-      div.appendChild(img);
-      gallery.appendChild(div);
-    }
-
-    photoInput.addEventListener('change', (e)=>{
-      const files = Array.from(e.target.files).slice(0,12); // limit previews
-      gallery.innerHTML='';
-      files.forEach(f=>addThumbnail(f));
-    });
-
-    clearPhotos.addEventListener('click', ()=>{
-      gallery.innerHTML='';
-      photoInput.value = '';
-    });
-
-    // Message envelope
-    const messageInput = document.getElementById('messageInput');
-    const messageDisplay = document.getElementById('messageDisplay');
-    const showMsg = document.getElementById('showMsg');
-    const clearMsg = document.getElementById('clearMsg');
-
-    showMsg.addEventListener('click', ()=>{
-      const text = messageInput.value.trim();
-      messageDisplay.textContent = text || 'No message yet — write something sweet!';
-      // little visual cue
-      messageDisplay.style.background = 'linear-gradient(180deg, #fff, #fff0f6)';
-      messageDisplay.style.padding = '10px';
-      messageDisplay.style.borderRadius = '8px';
-    });
-
-    clearMsg.addEventListener('click', ()=>{
-      messageInput.value='';
-      messageDisplay.textContent = 'Your message will appear here when you click "Seal & Show".';
-    });
-
-    // Audio controls
-    const audioInput = document.getElementById('audioInput');
-    const player = document.getElementById('player');
-    const playBtn = document.getElementById('playBtn');
-    const pauseBtn = document.getElementById('pauseBtn');
-    const stopBtn = document.getElementById('stopBtn');
-
-    audioInput.addEventListener('change', (e)=>{
-      const file = e.target.files[0];
-      if(!file) return;
-      const url = URL.createObjectURL(file);
-      player.src = url;
-      player.load();
-      player.play().catch(()=>{});
-    });
-
-    playBtn.addEventListener('click', ()=>player.play().catch(()=>{}));
-    pauseBtn.addEventListener('click', ()=>player.pause());
-    stopBtn.addEventListener('click', ()=>{ player.pause(); player.currentTime = 0; });
-
-    // Download the current HTML (simple client-side export)
-    const downloadBtn = document.getElementById('downloadBtn');
-    downloadBtn.addEventListener('click', ()=>{
-      // grab current HTML and create a blob to download
-      const doc = '<!doctype html>\n' + document.documentElement.outerHTML;
-      const blob = new Blob([doc], {type: 'text/html'});
-      const a = document.createElement('a');
-      a.href = URL.createObjectURL(blob);
-      a.download = 'cute-pink-page.html';
-      document.body.appendChild(a);
-      a.click();
-      a.remove();
-    });
-
-    // Small accessibility: keyboard shortcut to focus message
-    document.addEventListener('keydown', (e)=>{
-      if(e.key === 'm' && (e.ctrlKey || e.metaKey)){
-        e.preventDefault();
-        messageInput.focus();
-      }
-    });
-  </script>
+  <div id="secretMessageModal" class="message-box">
+    <h3>A Secret Message for You!</h3>
+    <p id="secretMessageText" style="white-space:pre-wrap;"></p>
+    <button class="btn" id="closeModalBtn">Close</button>
+  </div>
 </body>
 </html>
