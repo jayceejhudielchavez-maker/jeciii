@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Gift For You! ❤️</title>
+    <style>
+        /* CSS for the Pink Background and Layout */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #ffc0cb; /* A lovely pink color */
+            color: #4a4a4a;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            text-align: center;
+        }
+
+        .container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            max-width: 90%;
+            width: 500px;
+        }
+
+        /* Present Wrapper Styles */
+        .present-wrapper {
+            cursor: pointer;
+            padding: 20px;
+            background-color: #ff69b4; /* Hot pink for the wrapper */
+            color: white;
+            border-radius: 10px;
+            transition: transform 0.3s ease-in-out;
+            position: relative;
+        }
+        
+        /* Ribbon look */
+        .present-wrapper::before {
+            content: '🎀'; 
+            font-size: 50px;
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+        }
+
+        .present-wrapper h1 {
+            margin-top: 15px;
+        }
+
+        /* Hidden Content Styles */
+        .hidden-content {
+            display: none; /* Starts hidden */
+            padding-top: 20px;
+            animation: fadeIn 1s ease-out;
+        }
+
+        /* Animation to make the reveal smoother */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .hidden-content img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin: 15px 0;
+            border: 3px solid #ff69b4;
+        }
+
+        /* State when the present is 'open' */
+        .open .present-wrapper {
+            background-color: #ffb6c1; /* Lighter pink when opened */
+            transform: scale(0.9);
+            box-shadow: none;
+            cursor: default;
+        }
+
+        .open .present-wrapper h1 {
+            visibility: hidden; /* Hide the "Click to Open" text */
+            height: 0;
+            margin: 0;
+        }
+
+        .open .hidden-content {
+            display: block; /* Show the content */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container" id="giftBox">
+        
+        <div class="present-wrapper" onclick="unwrapPresent()">
+            <br>
+            <h1>Click Here to Unwrap Your Gift!</h1>
+        </div>
+        
+        <div class="hidden-content">
+            <h2>My Dearest Joan Mayy My loveyyy,</h2>
+            <p>I'm so sorry always for being the most undesirable person u meet I understand that I'm not worthy but I hope to make it up to you in simple ways that I know won't be good but I hope that will help</p>
+            <p>I love you!</p>
+            
+            <img src="IMG_9272.JPEG" alt="A special picture for you">
+            
+            <p style="font-style: italic;">Your one and Only <br>Jaycee</p>
+        </div>
+
+    </div>
+
+    <script>
+        // JavaScript to handle the "unwrapping" action
+        function unwrapPresent() {
+            const giftBox = document.getElementById('giftBox');
+            
+            // This toggles the 'open' class, which changes the CSS styles
+            giftBox.classList.add('open');
+            
+            // To make sure it can't be clicked again after opening
+            const wrapper = giftBox.querySelector('.present-wrapper');
+            wrapper.onclick = null;
+        }
+    </script>
+
+</body>
+</html>
